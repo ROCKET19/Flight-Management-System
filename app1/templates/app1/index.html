@@ -1,0 +1,25 @@
+{% extends "app1/base.html" %}
+{
+{% block title %}
+Flights
+{% endblock %}
+
+{% block body %}
+<h4>
+<div style="text-align: right">
+    <h4>You are currently logged in as : <i>{{ user.first_name }}</i></h4>
+    <a href="{% url 'logout' %}">Logout</a>
+</div></h4>
+    <div>
+    <h1>My frickin Flight application</h1>
+    <ul>
+        {% for flight in app1 %}
+        <li>
+            <a href = "{% url 'flight' flight.id %}">{{ flight }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    </div>
+
+{% endblock %}
+</html>

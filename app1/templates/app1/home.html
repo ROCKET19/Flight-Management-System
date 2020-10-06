@@ -1,0 +1,42 @@
+{% extends "app1/base.html" %}
+
+{% block title %}
+Flights
+{% endblock %}
+
+{% block body %}
+
+    <h1>Login</h1>
+{% if message %}
+<div>
+    {{ message }}
+</div>
+{% endif %}
+
+<form action="{% url 'login' %}" method="post">
+	{% csrf_token %}
+
+
+  <div class="container">
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+
+   <br> <button type="submit" style="background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 5%;">Login</button>
+
+  </div>
+
+</form>
+
+
+
+{% endblock %}
+</html>
